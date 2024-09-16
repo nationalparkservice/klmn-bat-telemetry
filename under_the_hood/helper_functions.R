@@ -18,8 +18,14 @@ my_function <- function(input) {
 }
 
 
+find_skip <- function(file) {
+  min(grep(srx1200_dataHeader1, readr::read_lines(file))-1)
+}
 
 
-tidy_srx800
-
-tidy_srx1200
+tidy_empties <- function(DF){
+  DF[DF=="NaN"] <- ""
+  DF[is.na(DF)] <- ""
+  DF[DF=="0"] <- ""
+  return(DF)
+}
