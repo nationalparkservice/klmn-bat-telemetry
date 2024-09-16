@@ -80,7 +80,7 @@ for(i in 1:length(dfs_1200)){
   i_indiv <- i_indiv+1}
 
 }
-
+rm(i_crto,i_indiv)
 
 names(df1200_crto) <- count_datasets
 #names(df1200_crto) <- "D0020007" # remove _c
@@ -134,10 +134,10 @@ SRX1200individualdata <- unique(rbind(masterfile_srx1200_i, df1200_indiv))
 
 SRX1200crtodata <- unique(rbind(masterfile_srx1200_c, df1200_crto))
 
+rm(masterfile_srx800,masterfile_srx1200_i,masterfile_srx1200_c,dfs_800,df1200_indiv,df1200_crto)
 
 
-
-# Save the new master file --------------
+# Save the new master files --------------
 # no Sys.Date because then we have to call up the last date we ran the
 # script on to pull the master data file back in OR I have to do more crazy stuff with
 
